@@ -21,23 +21,23 @@ h1 {
   background: #fcad26;
   font-size: 16px;
   font-weight: 300;
-	color: white;
+  color: white;
   text-transform: uppercase;
-	letter-spacing: 2px;
+  letter-spacing: 2px;
   padding: 25px 80px;
   margin: 0 auto;
   /* set the shadow: x-shadow, y-shadow, color */
-	box-shadow: 0 6px #efa424;
+  box-shadow: 0 6px #efa424;
   border-radius: 20px;
 }
 
 .btn:hover {
-	box-shadow: 0 4px #efa424;
+  box-shadow: 0 4px #efa424;
   /* change the button top 2 px down */
-	top: 2px;
+  top: 2px;
 }
 
 .btn:active {
-	box-shadow: 0 0 #efa424;
-	top: 6px;
+  box-shadow: 0 0 #efa424;
+  top: 6px;
 }
