@@ -1,4 +1,4 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
 h1 {
@@ -96,7 +96,7 @@ div.item i {
 
 div.item:hover i {
   /* new transform overwrite last version, so we need to set translate to put icon in the middle again */
-  /* translate(x-coordinate, y-coordinate */
+  /* translate(x-coordinate, y-coordinate) scale(curSize/preSize) */
   transform: translate(-50%, -50%) scale(1);
   /* 100 ms is delay */
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
