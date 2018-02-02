@@ -11,7 +11,10 @@ body {
   display: flex;
   /* set the Main Axis to be column */
   flex-direction: column;
-  /* set the space of content in Main Axis */
+  /* set the space of content in Main Axis; 
+   * align-items set the space of content in Cross Axis;
+   * align-content set the space between different lines in Cross Axis(wrap) 
+   */
   justify-content: space-between;
   /* set the Cross Axis (default is no wrap which means don't have cross axis) */
   flex-wrap: wrap;
