@@ -98,6 +98,6 @@ div.item:hover i {
   /* new transform overwrite last version, so we need to set translate to put icon in the middle again */
   /* translate(x-coordinate, y-coordinate) scale(curSize/preSize) rotate(n deg) */
   transform: translate(-50%, -50%) scale(1);
-  /* 100 ms is delay */
+  /* the order doesn't matter that much, ex: first time is duration, second is delay */
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
