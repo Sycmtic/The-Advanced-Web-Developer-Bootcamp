@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #2c3e50;
+  font-family: Helvetica;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  /* set to be the flex container */
+  display: flex;
+  /* set the space of content in Main Axis; 
+   * align-items set the space of content in Cross Axis;
+   * align-content set the space between different lines in Cross Axis(wrap) 
+   */
+  justify-content: space-between;
+  align-items: center;
+}
+/* select everything inside main */
+main > *, header, footer {
+  margin: 4px;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+main {
+  display: flex;
+  flex-basis: 800px;
+}
+
+article {
+  /* flex-grow: take 4 pieces of rest space (default is 0)
+   * flex-shrink: 0 means no shrink at all
+   * flex-basis: the basic width/height
+   */
+  flex: 4 0 60%;
+  background: #ecf0f1;
+}
+
+nav {
+  flex: 1 1 20%;
+  background: #95a5a6;
+  /* change order (default is 0) */
+  order: -1;
+}
+
+aside {
+  flex: 1 1 20%;
+  background: #3498db;
+}
+
+header, footer {
+  background: #1abc9c;
+  flex-basis: 100px;
+}
+
+/* change the flexbox style when shrink the screen to a given width */
+@media all and (max-width: 640px) {
+  main {
+    flex-direction: column;
+    /* set flex-grow of header and footer to 1, otherwise when shrink the window there will be an space */
+    flex-grow: 1;
+  }
+  /* change the order again when shrink the window */
+  nav {
+    order: 0;
+  }
+  header, footer {
+    flex-basis: 50px;
+  }
+}
