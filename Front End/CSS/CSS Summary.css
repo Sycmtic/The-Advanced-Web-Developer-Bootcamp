@@ -1,0 +1,254 @@
+/* select tag */
+h1 {
+  /* colors in css */
+  color: red
+  /* each 2 hex represent red, green and blue */
+  color: #4B0082;
+  /* RGB based decimal */
+  color: rgb(0, 255, 88);
+  /* RGBA is rgb with an alpha(transparency) channel, range from 0.0 - 1.0 */
+  color: rgba(0, 255, 0.5);
+}
+
+/* select id */
+#name {
+	/* set background color */
+  background: rgba(0, 0, 0, 0.5);
+  /* use image as background */
+  background: url(http://123hdwallpaperpic.com/download/20150725/elephants-african-nature-grass-savannah-overcast-wildlife-photography-animals-1920x1080.jpg);
+  /* do not auto fill the background with images */
+  background-repeat: no-repeat;
+  /* image cover all background */
+  background-size: cover;
+}
+
+/* select class */
+.class {
+	/* all three below are required to display a border */
+	border-width: 5px;
+	border-style: solid;
+	border-color: purple;
+	/* short cut syntax */
+	border: 5px solid purple;
+
+	/* set the max width */
+	max-width: 700px
+	/* Content: width take 100% of parent element */
+	width: 100%;
+	/* padding is the space between content and border */
+	padding: 40px;
+	/* margin is the space outside the border: */
+	/* shortcut syntax: top-bottom left-right */
+	margin: 20px, auto;
+
+	/* specifies that an element should be placed along the left or right side of its container */
+	float:left;
+}
+
+/* select every single element */
+* {
+	/* add decoration to text */
+	text-decoration: line-through;
+
+	/* change the space between lines, 2 means two times than default */
+	line-height: 2;
+	/* change the space between words */
+	/* rem is set referring to root element on the page, while em is relatively set by parent element */
+	letter-spacing: 0.2rem;
+
+	/* change the position of text */
+	text-align: center;
+
+	/* 
+	 * give context a shadow using text-shadow:
+	 * offset-x | offset-y | blur-radius | color
+	 */
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+	             0px 8px 13px rgba(0,0,0,0.1),
+	             0px 8px 23px rgba(0,0,0,0.1);
+}
+
+/* descendant selector: select nested inside */
+li .class {
+	/* font-weight font-size font-family */
+	font: bold 16px courier;
+}
+
+/* adjacent selector: select element after (same level) */
+h4 + ul {
+	/* change the original text */
+	text-transform: uppercase;
+}
+
+/* attribute selector */
+a[href="http://www.google.com"] {
+
+}
+input[type="text"] {
+
+}
+
+/* nth of type: select the element of given number */
+ul:nth-of-type(even) {
+
+}
+
+/* 
+BootStrap - framework for CSS/JS:
+Forms: https://getbootstrap.com/docs/4.0/components/forms/
+.form-group .form-control .help-block .form-inline etc
+
+Components: 
+container
+jumbotron
+nav-bar
+
+Grid System: .row .col-lg-6
+*/
+
+
+/**** CSS Animation ****/
+
+/* Pseudo-Classes: hover, focus, active */
+.btn {
+  /* clear the focus outline */
+  outline: none;
+  border: none;
+  /* change the icon of mouse when hover */
+  cursor: pointer;
+  /* The display property specifies the type of rendering box used for an element (default: inline) */
+  display: block;
+  /* keep the relative postion when change the button */
+  position: relative;
+  background: #fcad26;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 25px 80px;
+  margin: 0 auto;
+  /* set the shadow: x-shadow, y-shadow, color */
+  box-shadow: 0 6px #efa424;
+  /* set the corners radius */
+  border-radius: 20px;
+}
+/* select when hovered */
+.btn:hover {
+  box-shadow: 0 4px #efa424;
+  /* change the button top 2 px down */
+  top: 2px;
+}
+/* select when click the button */
+.btn:active {
+  box-shadow: 0 0 #efa424;
+  top: 6px;
+}
+
+
+/** Transform **/
+
+div.item:hover img {
+  /* change the image opacity to show the background color */
+  opacity: 0.3;
+  /* change the image color to black-white using filter */
+  filter: grayscale(100%);
+}
+/* "*" means select all */
+div.item * {
+  /* transition: property duration timing-function delay */
+  transition: all .35s ease-in-out;
+}
+
+div.item i {
+  /* set the scale 0 to hide the icon at the beginning */
+  transform: translate(-50%, -50%) scale(0);
+  /* back transition */
+  transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+div.item:hover i {
+  /* new transform overwrite last version, so we need to set translate to put icon in the middle again */
+  /* translate(x-coordinate, y-coordinate) scale(curSize/preSize) rotate(n deg) */
+  transform: translate(-50%, -50%) scale(1);
+  /* the order doesn't really matter, ex: first time is duration, second is delay */
+  transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/** Keyframes **/
+
+.sun {
+  /* set the transform origin point */
+  transform-origin: center;
+  /* connect to the keyframes animation */
+  animation-name: sunmotion;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  /* the number of animation plays */
+  animation-iteration-count: infinite;
+  /* normal do nothing; reverse plays the animation in reverse time-line; both do forwards then backwards */
+  animation-direction: normal;
+  /* forwards means when animation finished, stay at the last state; backwwards means, at the beginning jump to state one */
+  animation-fill-mode: forwards; 
+} 
+
+/* keyframs animation */
+@keyframes sunmotion {
+  0% {
+    background-color: #d35400;
+    transform: translate(-200px, 200px);
+  }
+  25% {
+    background-color: #f1c40f;
+    transform: translate(330px, 0px);
+  }
+  50% {
+    transform: translate(860px, -50px);
+  }
+  75% {
+    background-color: #f1c40f;
+    transform: translate(1390px, 0px);
+  }
+  100% {
+    background-color: #e74c3c;
+    transform: translate(1920px, 200px);
+  }
+}
+
+
+/**** Flexbox ****/
+
+.sidebar {
+  /* set to be the flex container */
+  display: flex;
+  /* set the Main Axis to be column */
+  flex-direction: column;
+  /**
+   * justify-content set the space of content in Main Axis; 
+   * align-items set the space of content in Cross Axis;
+   * align-content set the space between different lines in Cross Axis(wrap) 
+   */
+  justify-content: space-between;
+  /* set the Cross Axis (default is no wrap which means don't have cross axis) */
+  flex-wrap: wrap;
+
+  /**
+   * flex-grow: take pieces of rest space (default is 0) 
+   * flex-shrink: the ratio of shrink (0 means no shrink at all)
+   * flex-basic; the basic width/height 
+   */
+  flex: 1 1 200px;
+}
+
+/* change the flexbox style when shrink the screen to a given width */
+@media screen and (max-width: 920px) {
+  nav {
+  	/* change the order of elements in flexbox (default is 0) */
+  	order: -1;
+  	justify-content: center;
+  }
+  a {
+    font-size: 26px;
+  }
+}
